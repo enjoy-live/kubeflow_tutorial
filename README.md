@@ -456,3 +456,8 @@ namespace="kubeflow-user-example-com"
 ![img_4.png](image/img_4.png)
 在KServe EndPoints菜单可以看到我们发布的模型
 ![img_26.png](image/img_26.png)
+
+## 参考文档
+- [kserve client api and sample](https://kserve.github.io/website/docs/reference/controlplane-client/controlplane-client-sdk)
+- [kubeflow kfp sdk api](https://kubeflow-pipelines.readthedocs.io/en/latest/source/dsl.html?h=kubernates#kfp.dsl.PipelineTask)
+- [digits-recognizer-kubeflow](https://github.com/flopach/digits-recognizer-kubeflow/blob/master/readme.md)
