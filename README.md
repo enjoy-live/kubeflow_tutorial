@@ -146,11 +146,11 @@ run = client.create_run_from_pipeline_package(
 ##### 目的
 - 验证能正确在PVC卷中读取和写入数据
 ##### 步骤
-- 1. 创建持久卷
+1. 创建持久卷
      ![img_14.png](image/img_14.png)
      ![img_15.png](image/img_15.png)
      ![img_16.png](image/img_16.png)
-- 2. 打开持久卷，在根目录新建input_numbers.csv
+2. 打开持久卷，在根目录新建input_numbers.csv
      ![img_17.png](image/img_17.png)![img_18.png](image/img_18.png)![img_19.png](image/img_19.png)
 
 input_numbers.csv内容：
@@ -166,7 +166,7 @@ input_numbers.csv内容：
 8
 6
 ```
-- 3. 指定工作流Task的Pod挂载相应的持久卷
+3. 指定工作流Task的Pod挂载相应的持久卷
 ```text
 # --- 定义 Pipeline 工作流 ---
 @dsl.pipeline(
@@ -206,8 +206,9 @@ def demo_sort_pipeline(
 >mount_path="/mnt/shared" # 容器内访问该 PVC 的根目录
 >)
 >
-- 4. 最后编译和运行Pipeline
-     效果图：
+4. 最后编译和运行Pipeline 
+
+效果图：
      ![img_20.png](image/img_20.png)![img_21.png](image/img_21.png)![img_22.png](image/img_22.png)
      最后会在PVC的output目录下,写入排序好的sorted_numbers.csv文件
      ![img_23.png](image/img_23.png)![img_24.png](image/img_24.png)
@@ -218,7 +219,7 @@ def demo_sort_pipeline(
 - 验证正确的为Pipeline的每个步骤限定CPU和GPU资源，并且k8s正确的调度
 ##### 步骤 - 代码与演示
 完整代码：请查看src/cpu_gpu_setting_node_selector/cgpu_setting_node_selector.ipynb
-- 1. 在Pipeline定义每个Pod相应CPU和GPU资源 
+1. 在Pipeline定义每个Pod相应CPU和GPU资源 
 ```jupyterpython
 # 在Pipeline定义资源
 @dsl.pipeline(
@@ -251,7 +252,7 @@ def cgpu_setting_node_selector_pipeline():
 > [Mastering Resource Allocation in MLOps: A Guide to Optimizing GPU Utilization in Kubeflow Pipelines](https://medium.com/@amirianfar/mastering-resource-allocation-in-mlops-a-guide-to-optimizing-gpu-utilization-in-kubeflow-pipelines-99734c8eb4a2) 
 > 
 
-- 2. 验证资源是否如期分配的方法
+2. 验证资源是否如期分配的方法
 代码打印CPU和GPU信息
 ```jupyterpython
 
@@ -344,9 +345,9 @@ deploy_model_to_kserve(
 - 验证可部署Model至KServe
 ##### 步骤 - 代码与演示
 完整代码：请查看src/kserver/kserver_pipeline.ipynb
-- 1. 加载数据并保存为 Dataset Artifact
-- 2. 训练模型并输出 Model Artifact
-- 3. 部署model to kserve
+1. 加载数据并保存为 Dataset Artifact
+2. 训练模型并输出 Model Artifact
+3. 部署model to kserve
 ```text
 # 3. 部署model to kserve
 @dsl.component(
