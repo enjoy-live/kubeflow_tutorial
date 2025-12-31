@@ -156,7 +156,7 @@ run = client.create_run_from_pipeline_package(
 
 #### 2.2.2 读取挂载卷文件数据，写入处理后的数据至挂载卷
 这里使用“对整型数据进行降序排序”来演示
-完整代码：请查看src/sorting/sorting-pipeline.ipynb
+完整代码：请查看src/readAndWritePVC/readAndWritePVC-pipeline.ipynb
 ##### 目的
 - 验证能正确在PVC卷中读取和写入数据
 ##### 步骤
