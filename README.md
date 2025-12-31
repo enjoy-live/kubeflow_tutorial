@@ -1,3 +1,17 @@
+# 架构图
+![img.png](image/structure.png)
+## 服务列表
+| 服务名                           |                                       说明                                        |
+|:------------------------------|:-------------------------------------------------------------------------------:|
+| K8s Cluster                   |                           核心容器编排平台，负责应用的自动化部署、扩展和管理。                            |
+| Kubeflow                      |                 基于 K8s 的机器学习平台，用于构建、部署和管理端到端的 ML 工作流（Pipeline）。                 |
+| MINIO                         |                   高性能、兼容 S3 协议的对象存储，常用于存储 ML 模型文件、数据集及流水线构件。                    |
+| Grafana                       | 多源数据可视化平台，负责展示 Loki 日志、Prometheus 指标及业务大盘。 集群日志体系建设（FluentBit + Loki + grafana） |
+| Prometheus                    |    云原生监控标准，通过 Operator 模式实现对集群指标、资源用量及自定义指标的采集。 集群内部监控（Prometheus-Operator）     |
+| K9s + Metric-server           |          K9s: 终端交互式集群管理工具；Metric-server: 提供核心资源监控数据（CPU/内存），支持 HPA 扩容。          |
+| Harbor           |                开源的企业级容器镜像仓库.具备权限管理、镜像扫描及复制功能的生产级私有制品库，确保容器镜像安全可控                |
+| NFS存储系统       |         k8s集成NFS存储系统. 为 K8s 提供共享文件持久化卷（PV），通过 NFS-Provisioner 实现动态存储挂载。         |
+
 # kubeflow_tutorial(kubeflow入门示例)
 ## 1. 菜单和仪表盘预览
 ![img.png](image/img.png)
@@ -462,3 +476,4 @@ namespace="kubeflow-user-example-com"
 - [kserve client api and sample](https://kserve.github.io/website/docs/reference/controlplane-client/controlplane-client-sdk)
 - [kubeflow kfp sdk api](https://kubeflow-pipelines.readthedocs.io/en/latest/source/dsl.html?h=kubernates#kfp.dsl.PipelineTask)
 - [digits-recognizer-kubeflow](https://github.com/flopach/digits-recognizer-kubeflow/blob/master/readme.md)
+- [kubeflow](https://github.com/kubeflow/kubeflow)
