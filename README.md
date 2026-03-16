@@ -472,6 +472,23 @@ namespace="kubeflow-user-example-com"
 在KServe EndPoints菜单可以看到我们发布的模型
 ![img_26.png](image/img_26.png)
 
+# k9s查看容器启动事件
+```shell
+ssh storage@12.12.12.1
+#输入密码
+sudo su
+#输入密码
+#进入临时管理权限后,输入k9s回车，进入k9s终端UI界面
+k9s
+```
+k9s UI界面
+![img.png](img.png)
+选中“kubeflow-user-example-com"按回车进入
+![img_1.png](img_1.png)
+选中任务容器“demo-fully”按“d”键，查看容器事件
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
+
 ## 参考文档
 - [kserve client api and sample](https://kserve.github.io/website/docs/reference/controlplane-client/controlplane-client-sdk)
 - [kubeflow kfp sdk api](https://kubeflow-pipelines.readthedocs.io/en/latest/source/dsl.html?h=kubernates#kfp.dsl.PipelineTask)
